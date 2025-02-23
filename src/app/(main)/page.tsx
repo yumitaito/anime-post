@@ -5,6 +5,17 @@ interface Anime {
   imageUrl: string;
 }
 
+// APIレスポンスの型定義を追加
+interface AnimeMedia {
+  id: number;
+  title: {
+    native: string;
+  };
+  coverImage: {
+    extraLarge: string;
+  };
+}
+
 // サーバーコンポーネントとして非同期で実装
 export default async function Home() {
   // AniList GraphQL APIを使用する例
@@ -33,7 +44,7 @@ export default async function Home() {
   });
 
   const data = await response.json();
-  const animes: Anime[] = data.data.Page.media.map((anime: any) => ({
+  const animes: Anime[] = data.data.Page.media.map((anime: AnimeMedia) => ({
     id: anime.id,
     title: anime.title.native,
     imageUrl: anime.coverImage.extraLarge,
