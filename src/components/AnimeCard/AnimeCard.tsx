@@ -26,7 +26,7 @@ export const AnimeCard = ({ searchTerm }: AnimeCardProps) => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-[1320px] mx-auto px-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-4 max-w-[1320px] mx-auto px-2 sm:px-4">
       {filteredAnimes.map((anime) => (
         <AnimeCardItem key={anime.id} {...anime} />
       ))}

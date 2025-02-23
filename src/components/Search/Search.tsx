@@ -13,8 +13,10 @@ export const Search = ({ searchTerm, setSearchTerm }: SearchProps) => {
   };
 
   return (
-    <div className="mb-8 max-w-md mx-auto">
+    <div className="mb-8 w-[90%] max-w-md mx-auto px-2 sm:px-4">
       <input
+        id="anime-search"
+        data-testid="anime-search-input"
         type="text"
         placeholder="アニメを検索..."
         value={searchTerm}
