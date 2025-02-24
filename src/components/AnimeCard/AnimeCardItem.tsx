@@ -32,7 +32,7 @@ export const AnimeCardItem = ({ id, title, imageUrl }: AnimeCardItemProps) => {
           data-testid={`post-button-${id}`}
           className="mt-auto bg-blue-500 text-white py-1 sm:py-2 px-2 sm:px-4 rounded hover:bg-blue-600 transition-colors text-sm sm:text-base"
         >
-          投稿する
+          投票する
         </button>
       </div>
     </div>

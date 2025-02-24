@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "アニメランキング",
-  description: "アニメのランキングを表示",
+  description: "アニメのランキングを表示、投票できるサイトです。",
 };
 
 export default function RootLayout({

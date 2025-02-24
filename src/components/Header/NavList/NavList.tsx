@@ -9,9 +9,9 @@ export const NavList = () => {
   return (
     <nav className="w-full">
       <div className="flex md:justify-start justify-center items-center relative">
-        {/* ハンバーガーメニューボタン - スマホのみ表示、左側に配置 */}
+        {/* ハンバーガーメニューボタン - スマホのみ表示、右側に配置 */}
         <button
-          className="absolute -left-8 md:hidden p-2"
+          className="absolute right-4 md:hidden p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <div className="space-y-2 mr">
@@ -22,8 +22,11 @@ export const NavList = () => {
         </button>
 
         {/* メインリンク - PCでは左寄せ、スマホでは中央寄せ */}
-        <Link href="/" className="hover:text-gray-200 text-xl font-bold ml-10">
-          アニメランキング投稿
+        <Link
+          href="/"
+          className="hover:text-gray-200 text-xl font-bold md:ml-20"
+        >
+          アニメランキング投票
         </Link>
 
         {/* ランキング表リンク - PCでは横並び、スマホではサイドドロワー */}
@@ -41,7 +44,10 @@ export const NavList = () => {
         `}
         >
           <li className="mt-16 md:mt-0">
-            <Link href="/rankings" className="hover:text-gray-200 font-bold">
+            <Link
+              href="/rankings"
+              className="hover:text-gray-200 text-xl font-bold"
+            >
               ランキング表
             </Link>
           </li>
