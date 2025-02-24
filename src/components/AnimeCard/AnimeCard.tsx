@@ -6,9 +6,13 @@ import { useAnimes } from "@/hooks/useAnime";
 
 interface AnimeCardProps {
   searchTerm: string;
+  fromVoting?: boolean;
 }
 
-export const AnimeCard = ({ searchTerm }: AnimeCardProps) => {
+export const AnimeCard = ({
+  searchTerm,
+  fromVoting = false,
+}: AnimeCardProps) => {
   const { animes, isLoading, error } = useAnimes();
 
   const filteredAnimes = animes.filter((anime) => {
@@ -28,7 +32,13 @@ export const AnimeCard = ({ searchTerm }: AnimeCardProps) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-4 max-w-[1320px] mx-auto px-2 sm:px-4">
       {filteredAnimes.map((anime) => (
-        <AnimeCardItem key={anime.id} {...anime} />
+        <AnimeCardItem
+          key={anime.id}
+          id={anime.id}
+          title={anime.title}
+          imageUrl={anime.imageUrl}
+          fromVoting={fromVoting}
+        />
       ))}
     </div>
   );

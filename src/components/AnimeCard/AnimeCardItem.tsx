@@ -1,12 +1,23 @@
+"use client";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 interface AnimeCardItemProps {
   id: number;
   title: string;
   imageUrl: string;
+  fromVoting?: boolean;
 }
 
-export const AnimeCardItem = ({ id, title, imageUrl }: AnimeCardItemProps) => {
+export const AnimeCardItem = ({
+  id,
+  title,
+  imageUrl,
+  fromVoting = false,
+}: AnimeCardItemProps) => {
+  const pathname = usePathname();
+  const isRankingsPage = pathname === "/rankings";
+
   return (
     <div
       data-testid={`anime-card-${id}`}
@@ -27,13 +38,15 @@ export const AnimeCardItem = ({ id, title, imageUrl }: AnimeCardItemProps) => {
         >
           {title}
         </h2>
-        <button
-          id={`post-button-${id}`}
-          data-testid={`post-button-${id}`}
-          className="mt-auto bg-blue-500 text-white py-1 sm:py-2 px-2 sm:px-4 rounded hover:bg-blue-600 transition-colors text-sm sm:text-base"
-        >
-          投票する
-        </button>
+        {!isRankingsPage && !fromVoting && (
+          <button
+            id={`post-button-${id}`}
+            data-testid={`post-button-${id}`}
+            className="mt-auto bg-blue-500 text-white py-1 sm:py-2 px-2 sm:px-4 rounded hover:bg-blue-600 transition-colors text-sm sm:text-base"
+          >
+            投票する
+          </button>
+        )}
       </div>
     </div>
   );

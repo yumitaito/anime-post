@@ -6,7 +6,7 @@ export default function RankingsPage() {
       <h1 className="text-2xl font-bold mb-6 text-white text-center">
         ランキング表
       </h1>
-      <AnimeCardContainer />
+      <AnimeCardContainer fromVoting={true} />
     </main>
   );
 }
