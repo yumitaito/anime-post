@@ -33,11 +33,11 @@ export const NavList = () => {
         <ul
           className={`
           md:flex md:items-center md:ml-8
-          fixed md:static top-0 -left-48 md:left-0 h-full md:h-auto
+          fixed md:static top-0 right-[-12rem] md:right-0 h-full md:h-auto
           bg-sky-500 md:bg-transparent
           w-48 md:w-auto
           transition-all duration-300 ease-in-out
-          ${isMenuOpen ? "translate-x-48" : "translate-x-0"} md:translate-x-0
+          ${isMenuOpen ? "-translate-x-48" : "translate-x-0"} md:translate-x-0
           p-8 md:p-0
           shadow-lg md:shadow-none
           z-50 md:z-auto
