@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
-import { Header } from "@/components/Header/Header";
+// import { Header } from "@/components/Header/Header";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main>{children}</main>
     </div>
   );

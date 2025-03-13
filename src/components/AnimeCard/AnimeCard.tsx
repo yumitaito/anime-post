@@ -9,10 +9,7 @@ interface AnimeCardProps {
   fromVoting?: boolean;
 }
 
-export const AnimeCard = ({
-  searchTerm,
-  fromVoting = false,
-}: AnimeCardProps) => {
+export const AnimeCard = ({ searchTerm }: AnimeCardProps) => {
   const { animes, isLoading, error } = useAnimes();
 
   const filteredAnimes = animes.filter((anime) => {
@@ -37,7 +34,6 @@ export const AnimeCard = ({
           id={anime.id}
           title={anime.title}
           imageUrl={anime.imageUrl}
-          fromVoting={fromVoting}
         />
       ))}
     </div>

@@ -26,7 +26,7 @@ export const NavList = () => {
           href="/"
           className="hover:text-gray-200 text-xl font-bold md:ml-20"
         >
-          アニメランキング投票
+          放送中アニメリスト
         </Link>
 
         {/* ランキング表リンク - PCでは横並び、スマホではサイドドロワー */}
